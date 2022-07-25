@@ -1,3 +1,4 @@
+import MealItemForm from '../MealItemForm/MealItemForm';
 import classes from './MealItem.module.css';
 
 function MealItem({ meal }) {
@@ -11,6 +12,7 @@ function MealItem({ meal }) {
                 <div className={classes.price}>{price}</div>
             </div>
             <div>
+                <MealItemForm/>
             </div>
         </li >
     );
