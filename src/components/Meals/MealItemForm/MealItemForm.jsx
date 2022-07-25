@@ -1,12 +1,12 @@
 import Input from '../../UI/Input/Input';
 import classes from './MealItemForm.module.css';
 
-function MealItemForm() {
+function MealItemForm({mealId}) {
     return (
         <form className={classes.form}>
             <Input label="Amount" input={{
                 type: 'number',
-                id: 'amount',
+                id: 'amount_' + mealId,
                 min: '1',
                 max: '5',
                 step: '1',
