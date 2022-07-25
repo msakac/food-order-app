@@ -1,9 +1,10 @@
 import CartIcon from '../Cart/CartIcon';
 import classes from './HeaderCartButton.module.css';
 
-function HeaderCartButton(){
+function HeaderCartButton({onSetShown}){
+
     return (
-        <button className={classes.button}>
+        <button className={classes.button} onClick={onSetShown}>
         <span className={classes.icon}>
         <CartIcon/>
         </span>
