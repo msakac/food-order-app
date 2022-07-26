@@ -11,7 +11,7 @@ function AvailableMeals() {
 
     useEffect(() => {
         const fetchMeals = async () => {
-            const response = await fetch('https://react-daf75-default-rtdb.europe-west1.firebasedatabase.app/meals.jn');
+            const response = await fetch('https://react-daf75-default-rtdb.europe-west1.firebasedatabase.app/meals.json');
 
             if (!response.ok) {
                 throw new Error('Something went wrong!');
