@@ -23,6 +23,16 @@ function Cart({ onSetShown }) {
         setIsCheckout(true);
     }
 
+    const submitOrderHandler = (userData) => {
+        fetch('https://react-daf75-default-rtdb.europe-west1.firebasedatabase.app/orders.json', {
+            method: 'POST',
+            body: JSON.stringify({
+                user: userData,
+                orderedItems: ctx.items
+            })
+        });
+    }
+
     const modalActions = <div className={classes.actions}>
         <button className={classes['button--alt']} onClick={onSetShown}>Close</button>
         {hasItems && <button className={classes.button} onClick={orderHandler}>Order</button>}
@@ -44,8 +54,8 @@ function Cart({ onSetShown }) {
                 <span>Total amount</span>
                 <span>{total}</span>
             </div>
-            {isCheckout ? <Checkout onClose={onSetShown} /> : modalActions}
-            
+            {isCheckout ? <Checkout onConfirm={submitOrderHandler} onClose={onSetShown} /> : modalActions}
+
         </Modal>
     </>
 }
